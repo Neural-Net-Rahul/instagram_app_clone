@@ -1,0 +1,1 @@
+🚀 Instagram Clone with Firebase 🚀 - A robust social app featuring seamless Firebase authentication, dynamic Stories, a sophisticated Follow/Followers system, real-time messaging, and a responsive UI. Elevate your social media game and customize this project for your unique vision! 🌐📸🔐
