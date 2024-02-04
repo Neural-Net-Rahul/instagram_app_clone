@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="100dp"
+    android:layout_marginEnd="100dp"
+    android:background="@drawable/button_black_background">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfileImageSearch"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/profile_icon"/>
+        
+        <TextView
+            android:id="@+id/userNameSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_username"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="3dp"
+            android:textColor="#673AB7"
+            android:layout_below="@id/userProfileImageSearch"/>
+
+        <TextView
+            android:id="@+id/userFullNameSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_full_name"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:textColor="#673AB7"
+            android:layout_below="@id/userNameSearch"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userFollowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userFullNameSearch"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="#A19D9D"
+            android:text="@string/follow"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

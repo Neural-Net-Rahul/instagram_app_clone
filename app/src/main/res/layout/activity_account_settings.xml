@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountSettingsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayoutProfile">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:id="@+id/profileToolbarFrag">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/closeProfileButton"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/cross"/>
+
+                <ImageView
+                    android:id="@+id/saveProfileInfoButton"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/tick"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImageViewProfileFragment"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/profile_icon"
+        android:layout_below="@+id/appBarLayoutProfile"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/changeImageTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileImageViewProfileFragment"
+        android:text="@string/change_image"
+        android:layout_centerHorizontal="true"
+        android:textColor="#5C17D6"
+        android:layout_marginTop="10dp"
+        android:textSize="19sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/fullNameProfileFrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changeImageTextButton"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:hint="@string/full_name_user"
+        android:layout_marginEnd="20dp" />
+
+    <EditText
+        android:id="@+id/userNameProfileFrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameProfileFrag"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:hint="@string/username_profile_frag"
+        android:layout_marginEnd="20dp" />
+
+    <EditText
+        android:id="@+id/bioProfileFrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNameProfileFrag"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/bio_profile"
+        android:inputType="text"
+        android:layout_marginEnd="20dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/deleteAccountButton"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/logout"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_new_black_background"
+        android:layout_marginEnd="20dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/delete_account"
+        android:textStyle="bold"
+        android:background="@drawable/button_black_background"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp" />
+
+
+</RelativeLayout>
