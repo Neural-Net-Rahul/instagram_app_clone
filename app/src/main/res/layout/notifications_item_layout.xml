@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/profileImage"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_toStartOf="@id/postImageSmallView"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/profileImage">
+
+        <TextView
+            android:id="@+id/userNameNIL"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/contentNIL"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/postImageSmallView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true" />
+    
+</RelativeLayout>
+
+<!-- Do commit and push for updating the project-->

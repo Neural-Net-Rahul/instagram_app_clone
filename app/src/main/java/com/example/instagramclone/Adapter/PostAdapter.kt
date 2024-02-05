@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
@@ -68,6 +69,8 @@ class PostAdapter(private var mContext: Context,
                 FirebaseDatabase.getInstance().reference
                     .child("Likes").child(post.getPostId())
                     .child(firebaseUser?.uid!!).setValue(true)
+
+                addNotifications(post.getPublisher(),post.getPostId())
             }
             else{
                 FirebaseDatabase.getInstance().reference
@@ -260,6 +263,21 @@ class PostAdapter(private var mContext: Context,
 
             })
 
+    }
+
+    private fun addNotifications(userId:String,postId: String){
+        val notifsRef = FirebaseDatabase.getInstance().reference
+            .child("Notifications").child(userId)
+
+        val notifsMap = HashMap<String,Any>()
+        notifsMap["userId"] = firebaseUser!!.uid
+        notifsMap["text"] = "liked your post"
+        notifsMap["postId"] = postId
+        notifsMap["isPost"] = true
+
+        if(userId!= firebaseUser !!.uid) {
+            notifsRef.push().setValue(notifsMap)
+        }
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {

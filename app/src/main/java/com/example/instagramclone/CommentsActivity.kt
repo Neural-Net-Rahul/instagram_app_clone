@@ -125,6 +125,23 @@ class CommentsActivity : AppCompatActivity() {
 
         commentRef.push().setValue(commentsMap)
 
+        addNotifications()
+
         findViewById<EditText>(R.id.commentText).text.clear()
+    }
+
+    private fun addNotifications(){
+        val notifsRef = FirebaseDatabase.getInstance().reference
+            .child("Notifications").child(publisherId)
+
+        val notifsMap = HashMap<String,Any>()
+        notifsMap["userId"] = firebaseUser.uid
+        notifsMap["text"] = "commented : " + findViewById<EditText>(R.id.commentText).text.toString()
+        notifsMap["postId"] = postId
+        notifsMap["isPost"] = true
+
+        if(publisherId!=firebaseUser.uid) {
+            notifsRef.push().setValue(notifsMap)
+        }
     }
 }

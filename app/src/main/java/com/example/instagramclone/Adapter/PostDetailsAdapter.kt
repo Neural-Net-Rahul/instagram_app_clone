@@ -65,6 +65,8 @@ class PostDetailsAdapter(private var mContext: Context,
                 FirebaseDatabase.getInstance().reference
                     .child("Likes").child(post.getPostId())
                     .child(firebaseUser?.uid!!).setValue(true)
+
+                addNotifications(post.getPublisher(),post.getPostId())
             }
             else{
                 FirebaseDatabase.getInstance().reference
@@ -255,6 +257,21 @@ class PostDetailsAdapter(private var mContext: Context,
 
             })
 
+    }
+
+    private fun addNotifications(userId:String,postId: String){
+        val notifsRef = FirebaseDatabase.getInstance().reference
+            .child("Notifications").child(userId)
+
+        val notifsMap = HashMap<String,Any>()
+        notifsMap["userId"] = firebaseUser!!.uid
+        notifsMap["text"] = "liked your post"
+        notifsMap["postId"] = postId
+        notifsMap["isPost"] = true
+
+        if(userId!= firebaseUser !!.uid) {
+            notifsRef.push().setValue(notifsMap)
+        }
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
