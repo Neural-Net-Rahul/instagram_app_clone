@@ -7,10 +7,32 @@
     tools:context=".Fragments.HomeFragment">
 
     <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrameLayoutStory"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="50dp"
+        app:shimmer_duration="800">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <include
+                layout="@layout/posts_stories_shimmer"/>
+            <include
+                layout="@layout/posts_stories_shimmer"/>
+            <include
+                layout="@layout/posts_stories_shimmer"/>
+            <include
+                layout="@layout/posts_stories_shimmer"/>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmerFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="190dp"
         app:shimmer_duration="800">
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,10 +83,18 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewHome"
+        android:id="@+id/recyclerViewStory"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-        android:background="#130B0B"
+        android:background="#3F51B5"
+        android:layout_height="140dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHome"
+        android:layout_width="match_parent"
+        android:layout_marginTop="190dp"
+        android:background="#3F51B5"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>
 

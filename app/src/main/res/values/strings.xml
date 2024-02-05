@@ -59,4 +59,5 @@
     <string name="who_commented_on_post">Who commented on post?</string>
     <string name="following_search_frag">Following</string>
     <string name="followers_search_frag">Followers</string>
+    <string name="nameuser">nameUser</string>
 </resources>
