@@ -74,7 +74,7 @@ class AddPostActivity : AppCompatActivity() {
 //                            Log.d("check", imageUri.toString())
 
                             val ref = FirebaseDatabase.getInstance().reference.child("Posts")
-                            val postId = ref.push().key
+                            val postId = ref.push().key // only generates a key
 
                             val postMap = HashMap<String,Any>()
                             postMap["postId"] = postId.toString()

@@ -65,5 +65,6 @@ dependencies {
     // shimmer effect
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
 
-
+    implementation("com.github.shts:StoriesProgressView:3.0.0")
 }
+
