@@ -71,6 +71,9 @@ class AccountSettingsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.deleteAccountButton).isEnabled = false
+            // At the time of building app whenever user goes to any profile either from click or in onPause
+            // we must check whether profile exists inside User or not if exists then go else show user does not exist
         userInfo()
     }
 
