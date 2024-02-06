@@ -60,4 +60,8 @@
     <string name="following_search_frag">Following</string>
     <string name="followers_search_frag">Followers</string>
     <string name="nameuser">nameUser</string>
+    <string name="usernamestory">userNameStory</string>
+    <string name="______0">0</string>
+    <string name="seen_by">seen by</string>
+    <string name="delete">Delete</string>
 </resources>

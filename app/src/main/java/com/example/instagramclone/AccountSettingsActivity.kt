@@ -71,6 +71,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+//        findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.)
 
         userInfo()
     }
